@@ -3,6 +3,7 @@
 # Backend
 - Microsoft SQL Server
 - .NET 6
+- C#
 - Clean Architecture
 - Dependency Injection
 - Entity Framework Core
