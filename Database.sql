@@ -5,12 +5,12 @@ USE [DBEmployee]
 /****** Object:  Table [dbo].[Department] ******/
 
 CREATE TABLE [dbo].[Department](
-	[IdDeparment] [int] IDENTITY(1,1) NOT NULL,
+	[IdDepartment] [int] IDENTITY(1,1) NOT NULL,
 	[Name] [varchar](50) NULL,
 	[CreationDate] [datetime] DEFAULT (getdate()),
 PRIMARY KEY CLUSTERED 
 (
-	[IdDeparment] ASC
+	[IdDepartment] ASC
 )WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
@@ -32,8 +32,8 @@ PRIMARY KEY CLUSTERED
 GO
 
 
-ALTER TABLE [dbo].[Employee]  WITH CHECK ADD FOREIGN KEY([IdDeparment])
-REFERENCES [dbo].[Department] ([IdDeparment])
+ALTER TABLE [dbo].[Employee]  WITH CHECK ADD FOREIGN KEY([IdDepartment])
+REFERENCES [dbo].[Department] ([IdDepartment])
 GO
 
 /****** Data:  Table [dbo].[Department] ******/

@@ -6,6 +6,7 @@ import { Employee } from './interfaces/employee';
 import { EmployeeService } from './services/employee.service';
 
 import {MatDialog, MatDialogModule} from '@angular/material/dialog';
+import { EditComponent } from './dialogs/edit/edit.component';
 
 @Component({
   selector: 'app-root',
@@ -45,6 +46,10 @@ export class AppComponent implements AfterViewInit, OnInit {
         this.dataSource.data = dataResponse;
       },error:(e) => {}
     })
+  }
+
+  newEmployeeDialog() {
+    this.dialog.open(EditComponent);
   }
 
 }

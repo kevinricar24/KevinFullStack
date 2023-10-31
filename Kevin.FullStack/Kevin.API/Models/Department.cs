@@ -2,7 +2,7 @@
 
 public partial class Department
 {
-    public int IdDeparment { get; set; }
+    public int IdDepartment { get; set; }
 
     public string? Name { get; set; }
 

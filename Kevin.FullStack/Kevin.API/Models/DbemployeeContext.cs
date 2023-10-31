@@ -23,7 +23,7 @@ public partial class DbemployeeContext : DbContext
     {
         modelBuilder.Entity<Department>(entity =>
         {
-            entity.HasKey(e => e.IdDeparment).HasName("PK__Departme__59DF6FCE69B8A18F");
+            entity.HasKey(e => e.IdDepartment).HasName("PK__Departme__59DF6FCE69B8A18F");
 
             entity.ToTable("Department");
 
