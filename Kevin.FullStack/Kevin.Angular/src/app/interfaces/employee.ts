@@ -4,5 +4,5 @@ export interface Employee {
     idDepartment: number,
     nameDepartment?: string,
     salary: number,
-    contractDate: string
+    contractDate: string,
 }
