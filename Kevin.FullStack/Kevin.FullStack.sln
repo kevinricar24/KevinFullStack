@@ -5,7 +5,9 @@ VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backend", "Backend", "{49C03285-406C-4A01-B8FF-9949FDCC162D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kevin.API", "Kevin.API\Kevin.API.csproj", "{41087976-D0E2-43E1-BB3F-3D21DF3A9557}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kevin.API", "Kevin.API\Kevin.API.csproj", "{41087976-D0E2-43E1-BB3F-3D21DF3A9557}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{5AA19984-5AB2-43AA-B999-B67605B2DFEE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
