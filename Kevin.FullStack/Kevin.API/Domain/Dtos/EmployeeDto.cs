@@ -6,8 +6,8 @@
 
         public string? FullName { get; set; }
 
-        public int? IdDeparment { get; set; }
-        public string? NameDeparment { get; set; }
+        public int? IdDepartment { get; set; }
+        public string? NameDepartment { get; set; }
 
         public int? Salary { get; set; }
 
