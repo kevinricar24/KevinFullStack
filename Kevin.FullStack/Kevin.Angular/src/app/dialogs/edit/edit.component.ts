@@ -36,7 +36,7 @@ export class EditComponent implements OnInit {
 
   formEmployee: FormGroup;
   accionTitle: string = "New";
-  accionButton: string = "Guardar";
+  accionButton: string = "Save";
   DepartmentList: Department[] = []
 
   constructor(
@@ -73,11 +73,9 @@ export class EditComponent implements OnInit {
   }
 
   addEditEmployee(){
-    console.log(this.formEmployee.value)
-  
     const model:Employee={
       idEmployee:0,
-      fullname: this.formEmployee.value.fullName,
+      fullName: this.formEmployee.value.fullName,
       idDepartment: this.formEmployee.value.departmentId,
       salary: this.formEmployee.value.salary,
       contractDate: moment(this.formEmployee.value.contractDate).format("DD/MM/YYYY")
@@ -112,7 +110,7 @@ export class EditComponent implements OnInit {
   ngOnInit(): void {
     if(this.employeeData){
       this.formEmployee.patchValue({
-        fullName:this.employeeData.fullname,
+        fullName:this.employeeData.fullName,
         departmentId:this.employeeData.idDepartment,
         salary:this.employeeData.salary,
         contractDate:moment(this.employeeData.contractDate,"DD/MM/YYYY")

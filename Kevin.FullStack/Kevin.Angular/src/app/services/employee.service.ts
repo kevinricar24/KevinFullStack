@@ -25,11 +25,11 @@ export class EmployeeService {
   } 
 
   update(idEmployee: number, model: Employee):Observable<Employee>{
-    return this.http.put<Employee>(`${this.apiURL}${idEmployee}`, model);
+    return this.http.put<Employee>(`${this.apiURL}/${idEmployee}`, model);
   } 
 
   delete(idEmployee: number):Observable<void>{
-    return this.http.delete<void>(`${this.apiURL}${idEmployee}`);
+    return this.http.delete<void>(`${this.apiURL}/${idEmployee}`);
   } 
 
 }

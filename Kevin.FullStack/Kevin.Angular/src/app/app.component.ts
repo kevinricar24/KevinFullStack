@@ -7,6 +7,8 @@ import { EmployeeService } from './services/employee.service';
 
 import {MatDialog, MatDialogModule} from '@angular/material/dialog';
 import { EditComponent } from './dialogs/edit/edit.component';
+import { DeleteComponent } from './dialogs/delete/delete.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-root',
@@ -21,7 +23,8 @@ export class AppComponent implements AfterViewInit, OnInit {
 
   constructor(
     private _employeeService: EmployeeService, 
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private _snackBar: MatSnackBar
     ){}
 
   ngOnInit(): void {
@@ -42,14 +45,59 @@ export class AppComponent implements AfterViewInit, OnInit {
   ShowEmployee(){
     this._employeeService.read().subscribe({
       next:(dataResponse) => {
-        console.log(dataResponse);
         this.dataSource.data = dataResponse;
       },error:(e) => {}
     })
   }
 
-  newEmployeeDialog() {
-    this.dialog.open(EditComponent);
+  NewEmployeeDialog() {
+    this.dialog.open(EditComponent,{
+      disableClose:true,
+      width:"350px"
+    }).afterClosed().subscribe(result=>{
+      if(result === "created"){
+        this.ShowEmployee();
+      }
+    })
   }
+
+  EditEmployeeDialog(employeeData: Employee) {
+    this.dialog.open(EditComponent,{
+      disableClose:true,
+      width:"350px",
+      data:employeeData
+    }).afterClosed().subscribe(result=>{
+      if(result === "updated"){
+        this.ShowEmployee();
+      }
+    })
+  }
+
+
+  ShowAlert(msg: string, accion: string) {
+    this._snackBar.open(msg, accion,{
+      horizontalPosition:"end",
+      verticalPosition:"top",
+      duration:3000
+    });
+  }
+
+  DeleteEmployeeDialog(employeeData: Employee)
+  {
+    this.dialog.open(DeleteComponent,{
+      disableClose:true,
+      data:employeeData
+    }).afterClosed().subscribe(result=>{
+      if(result === "delete"){
+        this._employeeService.delete(employeeData.idEmployee).subscribe({
+          next:(data) => {
+            this.ShowAlert("Employee deleted","OK")
+            this.ShowEmployee();
+          },error:(e)=>{console.log(e)} 
+        });
+      }
+    })
+  }
+
 
 }

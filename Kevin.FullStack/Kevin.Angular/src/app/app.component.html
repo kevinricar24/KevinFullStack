@@ -1,7 +1,7 @@
 <div style="width: 70%;margin: 40px auto;">
   <h1>Employee List</h1>
 
-  <button mat-raised-button color="primary" (click)="newEmployeeDialog()">New Employee</button>
+  <button mat-raised-button color="primary" (click)="NewEmployeeDialog()">New Employee</button>
 
   <mat-form-field>
     <mat-label>Filter</mat-label>
@@ -39,10 +39,10 @@
       <ng-container matColumnDef="Actions">
         <th mat-header-cell *matHeaderCellDef></th>
         <td mat-cell *matCellDef="let element"> 
-          <button mat-icon-button color="primary">
+          <button mat-icon-button color="primary" (click)="EditEmployeeDialog(element)">
             <mat-icon>edit</mat-icon>
           </button>
-          <button mat-icon-button color="warn">
+          <button mat-icon-button color="warn" (click)="DeleteEmployeeDialog(element)">
             <mat-icon>delete</mat-icon>
           </button>
         </td>
