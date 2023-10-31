@@ -12,8 +12,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 // to work with Angular Material Tables
-import { MatTableModule } from '@angular/Material/table';
-import { MatPaginatorModule } from '@angular/Material/paginator';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+
+// to work with Angular Material Tables filtering
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from "@angular/material/form-field";
 
 // to work with Angular Material Controls
 import { MatButtonModule } from '@angular/material/button';
@@ -33,10 +37,14 @@ import { MatDialogModule } from '@angular/material/dialog';
 
 // to work with Angular Material Grids
 import { MatGridListModule } from '@angular/material/grid-list';
+import { EditComponent } from './dialogs/edit/edit.component';
+import { DeleteComponent } from './dialogs/delete/delete.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    EditComponent,
+    DeleteComponent
   ],
   imports: [
     BrowserModule,
@@ -46,6 +54,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
     HttpClientModule,
     MatTableModule,
     MatPaginatorModule,
+    MatInputModule,
+    MatFormFieldModule,
     MatButtonModule,
     MatSelectModule,
     MatDatepickerModule,
