@@ -11,7 +11,7 @@ namespace Kevin.API.Utils
         {
             CreateMap<Department, DepartmentDto>().ReverseMap();
             CreateMap<Employee, EmployeeDto>()
-                .ForMember(x => x.NameDeparment, opt => opt.MapFrom(s => s.IdDepartmentNavigation.Name))
+                .ForMember(x => x.NameDepartment, opt => opt.MapFrom(s => s.IdDepartmentNavigation.Name))
                 .ForMember(x => x.ContractDate, opt => opt.MapFrom(s => s.ContractDate.HasValue ? s.ContractDate.Value.ToString("dd/MM/yyyy") : string.Empty));
 
             CreateMap<EmployeeDto, Employee>()
