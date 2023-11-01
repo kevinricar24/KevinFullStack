@@ -1,4 +1,6 @@
-﻿using Kevin.API.Contract.Interfaces;
+﻿using Azure.Identity;
+using Azure.Security.KeyVault.Secrets;
+using Kevin.API.Contract.Interfaces;
 using Kevin.API.Models;
 using Kevin.API.Services;
 using Microsoft.EntityFrameworkCore;
@@ -20,12 +22,12 @@ namespace Kevin.API.DependencyResolution
         public static void AddPersistence(this IServiceCollection services, WebApplicationBuilder builder)
         {
             //using connection string in Azure Key Vault
-            //var AzureKeyVault = builder.Configuration["AzureKeyVault"];
-            //var secretsClient = new SecretClient(new Uri(AzureKeyVault), new DefaultAzureCredential());
-            //string connectionString = secretsClient.GetSecret("mentoring-keyvault-connectionstring").Value.Value.ToString();
+            var AzureKeyVault = builder.Configuration["AzureKeyVault"];
+            var secretsClient = new SecretClient(new Uri(AzureKeyVault), new DefaultAzureCredential());
+            string connectionString = secretsClient.GetSecret("fullstack-connectionstring").Value.Value.ToString();
 
             //Using connection string local
-            string connectionString = builder.Configuration["ConnectionStrings:DefaultConnection"];
+            //string connectionString = builder.Configuration["ConnectionStrings:DefaultConnection"];
             builder.Services.AddDbContext<DbemployeeContext>(options =>
             {
                 options.UseSqlServer(connectionString);
