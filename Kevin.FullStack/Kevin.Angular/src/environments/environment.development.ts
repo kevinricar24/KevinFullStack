@@ -1,3 +1,3 @@
 export const environment = {
-    endpoint: "https://localhost:7071/"
+    endpoint: "https://kevinfullstack.azurewebsites.net/"
 };
