@@ -38,4 +38,7 @@
 - tslib: "^2.3.0",
 - zone.js: "~0.13.0"
 
+![alt text](https://github.com/kevinricar24/KevinFullStack/blob/main/Kevin.FullStack/Kevin.Angular/src/image/angular.png)
+
+
 ## React
