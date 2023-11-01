@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/4493aac4-b085-49d7-90e8-d9d9396f7e32/resourceGroups/mentoring/providers/Microsoft.Web/sites/kevinfullstackangular",
+    "appService.deploySubpath": "Kevin.FullStack\\Kevin.Angular\\dist\\kevin.angular"
+}
