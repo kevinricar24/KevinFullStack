@@ -42,9 +42,10 @@ namespace Kevin.Automation.UITests
             var buttonCreate = driver.FindElement(By.XPath("/html[1]/body[1]/app-root[1]/div[1]/button[1]/span[2]"));
             buttonCreate.Click();
 
-            var buttonCreate = driver.FindElement(By.XPath(""));
-            var buttonCreate = driver.FindElement(By.XPath(""));
-            var buttonCreate = driver.FindElement(By.XPath("/html[1]/body[1]/app-root[1]/div[1]/button[1]/span[2]"));
+            var fullNameField = driver.FindElement(By.Id(""));
+            var departmentDropdown = driver.FindElement(By.Id(""));
+            var salaryField = driver.FindElement(By.Id(""));
+            var contractDateCalendar = driver.FindElement(By.Id(""));
 
             //Assert
             Assert.Equal(titleExpected, titleActual);
