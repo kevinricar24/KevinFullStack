@@ -5,14 +5,14 @@
       <mat-grid-tile>
         <mat-form-field appearance="outline">
           <mat-label>Full Name</mat-label>
-          <input matInput formControlName="fullName" autocomplete="off">
+          <input id="fullName" matInput formControlName="fullName" autocomplete="off">
         </mat-form-field>
       </mat-grid-tile>
 
       <mat-grid-tile>
         <mat-form-field appearance="outline">
           <mat-label>Department</mat-label>
-          <mat-select formControlName="departmentId">
+          <mat-select id="department" formControlName="departmentId">
             <mat-option *ngFor="let item of DepartmentList" [value]="item.idDepartment">
               {{item.name}}
             </mat-option>
@@ -23,14 +23,14 @@
       <mat-grid-tile>
         <mat-form-field appearance="outline">
           <mat-label>Salary</mat-label>
-          <input matInput formControlName="salary" autocomplete="off" type="number">
+          <input id="salary" matInput formControlName="salary" autocomplete="off" type="number">
         </mat-form-field>
       </mat-grid-tile>
 
       <mat-grid-tile>
         <mat-form-field appearance="outline">
           <mat-label>Contract Date</mat-label>
-          <input matInput [matDatepicker]="picker" formControlName="contractDate">
+          <input id="contractDate" matInput [matDatepicker]="picker" formControlName="contractDate">
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
@@ -42,7 +42,7 @@
 </div>
 <div mat-dialog-actions>
   <button mat-raised-button mat-dialog-close color="warn">Close</button>
-  <button mat-raised-button color="primary" 
+  <button mat-raised-button id="save" color="primary" 
    (click)="addEditEmployee()"
    [disabled]="formEmployee.invalid">
     {{accionButton}}</button>
